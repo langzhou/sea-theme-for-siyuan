@@ -227,9 +227,9 @@
 }
 /* 增加对话框圆角效果 */
 .b3-dialog__container{
-    background-color: #182026;
+    background-color: var(--b3-theme-surface);
     border-radius: 6px;
-    border: 1px solid #182026;
+    border: 1px solid var(--b3-theme-surface);
     overflow: hidden;
 }
 
