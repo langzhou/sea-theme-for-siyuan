@@ -76,7 +76,7 @@
     --b3-vditor-search-current-background: #a5d3fe;
 
     /* 代码片段背景 */
-    --b3-vditor-code-background: rgba(27, 31, 35, .05);
+    --b3-vditor-code-background: rgba(47, 73, 69, 1);
 
     /* 即时渲染标记符颜色 */
     --b3-vditor-mark-heading-color: #106BA3;
@@ -278,4 +278,7 @@
 
 .language-graphviz polygon {
     fill: transparent;
+}
+.hljs, .hljs-subst {
+    color: #7b7b3c!important;
 }
