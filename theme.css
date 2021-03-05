@@ -12,7 +12,7 @@
     /* 文字颜色 */
     --b3-theme-on-primary: #fff;
     --b3-theme-on-secondary: #fff;
-    --b3-theme-on-background: #BFBFC1;
+    --b3-theme-on-background: #bbb;
     --b3-theme-on-surface: #7D7A88; /*弹出面板字体颜色*/
     --b3-theme-on-error: #fff;
 
@@ -118,22 +118,13 @@
     font-size: 16px;
     word-break: break-word;
 }
-.vditor-ir--tip *[tip]:before {
-    content: attr(tip);
-    font-size: 12px;
-    color: var(--b3-theme-on-surface);
-    float: right;
-    margin: -10px 0px 0 0;
-    background-color: var(--b3-theme-background);
-    padding: 0 8px;
-    line-height: 12px;
-}
-
+/* 块命名、别名 */
 .vditor-ir--tip *[tip] {
-    padding: 5px;
-    box-shadow: -1px 0 0px 0px var(--b3-border-color),1px 0 0px 0px var(--b3-border-color),0px 1px 0px 0px var(--b3-border-color),0px -1px 0px 0px var(--b3-border-color);
+    padding: 4px;    
 }
-
+.vditor-ir--tip *[tip]:not([fold="1"]):before{
+    margin: -12px 8px 0 0;
+}
 /*滚动条整体样式*/
 ::-webkit-scrollbar {
   width : 3px;  /*高宽分别对应横竖滚动条的尺寸*/
@@ -153,7 +144,9 @@
     padding: 0 2px;
     border-bottom: .5px solid #97AE7B;
 }
-
+.vditor-ir__link:hover{
+    cursor: pointer;
+}
 /* tag */
 .vditor-ir__tag{
     color: #888888;
@@ -161,12 +154,71 @@
 
 }
 
+/* 任务列表样式  enlightened by @zqhjl */
+.vditor-task input[type="checkbox"]:before {
+  content: "";
+  display: inline-block;
+  cursor: pointer;
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: middle;
+  text-align: center;
+  border: 0px;
+  border-radius: 3px;
+  background-color: var(--b3-vditor-code-background);
+  margin-top: -0.3rem;
+  margin-left: -0.1rem;
+  
+}
+
+/* 任务列表未选中，鼠标悬停 */
+.vditor-task input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: hsl(192, 6%, 40%);
+  color: var(--b3-theme-primary);
+  font-weight: bold;
+}
+
+/* 任务列表选中 */
+.vditor-task input[type="checkbox"]:checked:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: var(--b3-theme-primary);
+  font-weight: bold;
+}
+
+/* 任务列表选中，鼠标悬停 */
+.vditor-task input[type="checkbox"]:checked:hover:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #666;
+  font-weight: bold;
+}
+
+/* 任务列表选中后的文本样式 */
+.vditor-task--done p {
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* 任务列表与文字的距离 */
+.vditor-task input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+/* 删除线样式 */
+.vditor-reset s{
+    color: #999;
+}
 /* dock */
 .dock{
     
 }
 #dockLeft{
-   background-color: var(--b3-theme-background);
+    background-color: var(--b3-theme-background);
 }
 #dockRight{
     background-color: var(--b3-theme-background);
@@ -175,19 +227,24 @@
 
 /* 块引用 */
 .vditor-ir__blockref{
-        border-bottom: .5px dashed #768AA5;
-        padding-bottom: 2px;
-        color: #8EABD1;
-        margin: 0 2px;
+    border-bottom: .5px dashed #768AA5;
+    padding-bottom: 2px;
+    color: #8EABD1;
+    margin: 0 2px;
 
     }
 /* 块引用文字悬浮样式 */
  .vditor-ir__blockref:hover{
-        background-color: #2C2B37;
-          
-        border-bottom: .5px solid #768AA5;
-        
-    }
+    background-color: #2C2B37;          
+    border-bottom: .5px solid #768AA5;
+}
+
+/* 引用数icon */
+.vditor-ir__menu span{
+    background-color: var(--b3-theme-primary);
+    border-radius: 2px;
+    padding:0 2px;
+}
 /*行内代码块*/
 .vditor-reset kbd{
     background-color: #2C2B37;
@@ -215,6 +272,12 @@
 .block__icons,.b3-list-item, .b3-list-item__text{
     color: var(--b3-theme-on-surface);
 }
+/* 页签标题栏 标题文字 */
+.layout-tab-bar .item__text{
+    padding: 0 2px; /* 适当增加标题文本左右间隙 */
+}
+
+
 
 /* 设置通用文本框背景和字体色 */
 .b3-text-filed,.b3-select{
@@ -245,6 +308,16 @@
     
 }
 
+
+/* dock 面板标题栏 */
+.block__icons{
+    background-color: var(--b3-theme-surface);
+}
+
+/* dock 面板标题栏选中激活 */
+.block__icons--active{
+    background-color: var(--b3-theme-surface);
+}
 
 /* 通用（右侧）浮窗搜索icon样式 */
 .search__label input{
