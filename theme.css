@@ -125,17 +125,9 @@
 .vditor-ir--tip *[tip]:not([fold="1"]):before{
     margin: -12px 8px 0 0;
 }
-/*滚动条整体样式*/
-::-webkit-scrollbar {
-  width : 3px;  /*高宽分别对应横竖滚动条的尺寸*/
-  overflow-y: hidden;
-  }
 
-::-webkit-scrollbar-thumb{
-    background-color: #25242A;
-    border-radius: 15px;
-    border: 1px solid #25242A;
-  }
+
+
 
 /* link */
 .vditor-ir__link{
@@ -153,6 +145,8 @@
     text-decoration: none;
 
 }
+
+
 
 /* 任务列表样式  enlightened by @zqhjl */
 .vditor-task input[type="checkbox"]:before {
@@ -355,3 +349,20 @@
 .hljs, .hljs-subst {
     color: #7b7b3c!important;
 }
+
+
+
+/*滚动条整体样式*/
+::-webkit-scrollbar {
+    width : 8px;  /* 滚动条宽度 */
+    overflow-y: hidden;
+}
+
+/* 滚动条颜色 */
+::-webkit-scrollbar-thumb{
+    background-color:var(--b3-theme-primary-lightest);
+    border-radius: 15px;    
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--b3-theme-primary-light);
+} 
