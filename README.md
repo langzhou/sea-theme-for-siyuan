@@ -1,4 +1,4 @@
-# sea-theme-for-siyuan
+# 思源笔记暗色主题：Sea
 
 问题反馈：https://github.com/langzhou/siyuan-note/issues/1
 
