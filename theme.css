@@ -161,8 +161,8 @@
 
 /******* 顶部工具栏 toolbar **********/
 .toolbar{
-    background-color: var(--b3-theme-surface);
-    border-bottom: var(--allen-column-border);
+    background-color:   var(--b3-theme-surface);
+    border-bottom:      var(--allen-column-border);
 }
 
 
@@ -229,7 +229,7 @@
     color:var(--b3-theme-on-surface);
 }
 .b3-list--background .b3-list-item--focus{
-    #background-color: var(--b3-theme-primary-lightest) !important;
+   /*  background-color: var(--b3-theme-primary-lightest) !important; */
 }
 
 /*区分文件数与引用数的图标样式*/
@@ -239,7 +239,6 @@ span.counter:not(.popover__block){
 .protyle-attr--refcount{
     border-radius: 2px;
 }
-
 
 
 /********* 菜单、弹框 **************/
@@ -315,6 +314,13 @@ span.counter:not(.popover__block){
 /* 页签标题 */
 .layout-tab-bar .item__text{
     padding: 0 2px;
+}
+/* 默认隐藏页签关闭按钮，悬浮时展现 */
+.layout-tab-bar .item__close{
+    visibility: hidden;
+}
+.layout-tab-bar .item:hover .item__close{
+    visibility: visible;
 }
 
 /***** 面包屑 *****/
@@ -504,7 +510,7 @@ strong[style]{
      border-bottom: 1px dashed var(--b3-theme-primary);
      #background-color: var(--b3-theme-primary-lightest);
      color: var(--b3-theme-primary);
-     padding: 2px ;
+     padding: 2px;
      margin: 0px;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover{
@@ -532,6 +538,10 @@ strong[style]{
     font-size: 85%;
 }
 
+/* 数学公式 */
+.b3-typography [data-subtype="math"], .protyle-wysiwyg [data-subtype="math"]{
+    font-size: 100%;
+}
 
 /* 块折叠状态 */
 .protyle-wysiwyg [data-node-id][fold="1"]{
